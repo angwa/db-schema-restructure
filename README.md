@@ -36,7 +36,7 @@ DB_USERNAME=
 DB_PASSWORD=
 ```
 
-Please replace the above env variables pointing to your database
+Please replace the above .env variables pointing to your database.
 
 ### Generating  Application key
 Run the following command on the project directory to generate a new app key
@@ -44,6 +44,14 @@ Run the following command on the project directory to generate a new app key
 ```
 php artisan key:generate
 ```
+
+### Run Migration
+To run migation and create the database tables in your database you configured above, please run
+
+```
+php artisan migrate
+```
+
 ### Starting your application
 To start your application, type the following command in the terminal of the root folder of your project
 ```
