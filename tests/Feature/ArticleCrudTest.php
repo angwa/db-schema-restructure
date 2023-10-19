@@ -38,7 +38,7 @@ class ArticleCrudTest extends TestCase
         $article = Article::factory()->create()->id;
 
         $response = $this->putJson('/api/articles/' . $article,  [
-            'article' => $this->faker->sentence,
+            'article_name' => $this->faker->sentence,
         ]);
 
         $response->assertStatus(HTTP_SUCCESS);

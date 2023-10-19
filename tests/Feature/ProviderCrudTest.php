@@ -40,7 +40,7 @@ class ProviderCrudTest extends TestCase
             $provider = Provider::factory()->create()->id;
         }
         $response = $this->putJson('/api/providers/' . $provider,  [
-            'provider' => $this->faker->company(),
+            'provider_name' => $this->faker->company(),
         ]);
 
         $response->assertStatus(HTTP_SUCCESS);
@@ -57,9 +57,7 @@ class ProviderCrudTest extends TestCase
             $provider = Provider::factory()->create()->id;
         }
 
-        $response = $this->deleteJson('/api/providers/' . $provider,  [
-            'provider' => $this->faker->company(),
-        ]);
+        $response = $this->deleteJson('/api/providers/' . $provider);
 
         $response->assertStatus(HTTP_SUCCESS);
         $this->assertIsObject($response);
