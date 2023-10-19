@@ -44,6 +44,13 @@ Run the following command on the project directory to generate a new app key
 ```
 php artisan key:generate
 ```
+### Starting your application
+To start your application, type the following command in the terminal of the root folder of your project
+```
+php artisan serve
+```
+
+Use the url generated when you serve the appplication to supply {{URL}} variable in the postman documentation
 
 ## Note
 If you run into error, run the following commands one after the other on the project directory
