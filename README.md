@@ -31,9 +31,9 @@ You can check the default .env.example if you want to manually create the .env f
 The keys to be updated in your .env file that was just generated in the above command is
 
 ```
-DB_DATABASE=custome_database_name
-DB_USERNAME=root
-DB_PASSWORD=secret
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
 ```
 
 Please replace the above env variables pointing to your database
