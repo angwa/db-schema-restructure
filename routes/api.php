@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ProvidersController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,11 @@ Route::prefix('providers')->name('providers.')->group(function () {
     Route::post('', [ProvidersController::class, 'store'])->name('store');
     Route::put('{provider}', [ProvidersController::class, 'update'])->name('update');
     Route::delete('{provider}', [ProvidersController::class, 'delete'])->name('delete');
+});
+
+Route::prefix('articles')->name('articles.')->group(function () {
+    Route::get('', [ArticlesController::class, 'index'])->name('index');
+    Route::post('', [ArticlesController::class, 'store'])->name('store');
+    Route::put('{article}', [ArticlesController::class, 'update'])->name('update');
+    Route::delete('{article}', [ArticlesController::class, 'delete'])->name('delete');
 });
