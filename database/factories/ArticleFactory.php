@@ -22,15 +22,20 @@ class ArticleFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (Article $article) {
+
+            $randomProvider = Provider::inRandomOrder()->first();
+
+            if ($randomProvider) {
+                $provider = $randomProvider->id;
+            } else {
+                $provider = Provider::factory()->create()->id;
+            }
+
             ArticleProvider::factory()->create([
                 'article_id' => $article->id,
-                'provider_id' => Provider::factory()->create()->id,
+                'provider_id' => $provider,
                 'price' => $this->faker->randomFloat(2, 10, 1000),
             ]);
         });
     }
 }
-
-
-
-

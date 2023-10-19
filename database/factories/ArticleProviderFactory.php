@@ -17,8 +17,16 @@ class ArticleProviderFactory extends Factory
      */
     public function definition(): array
     {
+        $randomProvider = Provider::inRandomOrder()->first();
+
+        if ($randomProvider) {
+            $provider = $randomProvider->id;
+        } else {
+            $provider = Provider::factory()->create()->id;
+        }
+
         return [
-            'provider_id' => Provider::factory()->create()->id,
+            'provider_id' => $provider,
             'price' => $this->faker->randomFloat(2, 10, 1000)
         ];
     }
