@@ -34,7 +34,7 @@ class ProvidersController extends Controller
     public function update(Request $request, Provider $provider)
     {
         $request->validate([
-            'provider' => 'required|string|max:200',
+            'provider' => 'nullable|string|max:200',
         ]);
 
         $provider->update([
