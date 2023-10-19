@@ -65,8 +65,8 @@ class ArticlesController extends Controller
     public function update(Request $request, Article $article)
     {
         $request->validate([
-            'article' => 'nullable|string|max:200',
-            'price' => 'nullable|numeric',
+            'article' => 'required|string|max:200',
+            'price' => 'required|numeric',
         ]);
 
         try {

@@ -15,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('', function () {
+    return response()->json([
+        'status' => 200,
+        'message' => 'Welcome!'
+    ], 200);
+});
+
+
 Route::prefix('providers')->name('providers.')->group(function () {
     Route::get('', [ProvidersController::class, 'index'])->name('index');
     Route::post('', [ProvidersController::class, 'store'])->name('store');
